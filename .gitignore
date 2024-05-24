@@ -1,0 +1,4 @@
+# Folders to ignore when pushing to git
+.idea/
+.venv/
+__pycache__/
