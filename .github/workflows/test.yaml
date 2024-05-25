@@ -1,0 +1,25 @@
+## This file will run the tests for the functions in the files -
+# regression.py
+# This file will be tested using regression_test.py
+
+## Code for testing regression.py:
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test regression_test.py
+      run: |
+        python -m pytest regression_test.py
